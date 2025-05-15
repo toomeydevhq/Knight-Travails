@@ -1,0 +1,217 @@
+:root {
+    --light-square: #f0d9b5;
+    --dark-square: #b58863;
+    --highlight-start: #a7c7e7;
+    --highlight-end: #ff6961;
+    --highlight-path: #c1e1c1;
+    --highlight-move: #ffd700;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    text-align: center;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.input-group input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 60px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#randomize {
+    background-color: #2196F3;
+}
+
+#randomize:hover {
+    background-color: #0b7dda;
+}
+
+.board-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 400px;
+    height: 400px;
+    border: 2px solid #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.square.light {
+    background-color: var(--light-square);
+}
+
+.square.dark {
+    background-color: var(--dark-square);
+}
+
+.square.start {
+    background-color: var(--highlight-start);
+}
+
+.square.end {
+    background-color: var(--highlight-end);
+}
+
+.square.path {
+    background-color: var(--highlight-path);
+}
+
+.square.move {
+    background-color: var(--highlight-move);
+}
+
+.coordinate {
+    position: absolute;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.x-coord {
+    bottom: 2px;
+    right: 2px;
+}
+
+.y-coord {
+    top: 2px;
+    left: 2px;
+}
+
+.knight {
+    font-size: 24px;
+}
+
+.path-info {
+    flex: 1;
+    min-width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.path-info h3 {
+    margin-top: 0;
+    color: #444;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.path-steps {
+    margin-top: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.step {
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: white;
+    border-radius: 4px;
+    border-left: 4px solid #4CAF50;
+}
+
+.step.start {
+    border-left-color: var(--highlight-start);
+    font-weight: bold;
+}
+
+.step.end {
+    border-left-color: var(--highlight-end);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .chessboard {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .input-group {
+        width: 100%;
+    }
+    
+    .input-group input {
+        width: 100%;
+    }
+    
+    button {
+        width: 100%;
+    }
+}

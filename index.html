@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight's Shortest Path</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>♞ Knight's Shortest Path ♞</h1>
+        <div class="controls">
+            <div class="input-group">
+                <label for="startX">Start X:</label>
+                <input type="number" id="startX" min="0" max="7" value="0">
+            </div>
+            <div class="input-group">
+                <label for="startY">Start Y:</label>
+                <input type="number" id="startY" min="0" max="7" value="0">
+            </div>
+            <div class="input-group">
+                <label for="endX">End X:</label>
+                <input type="number" id="endX" min="0" max="7" value="7">
+            </div>
+            <div class="input-group">
+                <label for="endY">End Y:</label>
+                <input type="number" id="endY" min="0" max="7" value="7">
+            </div>
+            <button id="findPath">Find Path</button>
+            <button id="randomize">Random Positions</button>
+        </div>
+        <div class="board-container">
+            <div class="chessboard" id="chessboard"></div>
+            <div class="path-info" id="pathInfo">
+                <h3>Path Information</h3>
+                <p>Select start and end positions, then click "Find Path"</p>
+                <div class="path-steps" id="pathSteps"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
